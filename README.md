@@ -17,11 +17,15 @@ It takes a JSON object in the following format as payload
 {
   "fullUrl":"<The URL to be shortened>"
 }
+	
+	
 cURL
 curl -X POST \
   http://localhost:8080/shorten \
   -H 'Content-Type: application/json' \
   -d '{"fullUrl":"https://example.com/example/1"}'
+	
+	
 Response:
 
 {
@@ -35,12 +39,15 @@ Please note that API works only with valid HTTP or HTTPS Urls. In case of malfor
   "message":"<Exception message>"
 }
 	
-	GET /<shortened_text>
+
+GET /<shortened_text>
 This endpoint redirects to the corresponding fullUrl.
 
+	
 GET /actuator/health
 Included the spring boot actuator dependency for API metrics. You can try this endpoint for health checks.
 
+	
 cURL
 curl -X GET   http://localhost:8080/actuator/health
 	
